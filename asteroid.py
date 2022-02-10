@@ -16,7 +16,7 @@ import tensorflow as tf
 
 
 
-new_model = tf.keras.models.load_model("")
+new_model = tf.keras.models.load_model('sbdb_my_model')
 
 
 if __name__=="__main__":
@@ -24,12 +24,6 @@ if __name__=="__main__":
     st.title("**Asteroid Diameter Prediction**")
 
 
-    # model = SentenceTransformer('distilbert-base-nli-mean-tokens')
-
-    # encoded_data = pickle.load(open("encoded_data.pkl", 'rb'))
-
-
-    # dataframe = pd.read_csv(os.getcwd()+'\\results\\fields_altered.csv')
 
 
     start = time.time()
@@ -68,7 +62,7 @@ if __name__=="__main__":
     st.write("after inflecting albedo")
     st.dataframe(df_predict)
 
-    new_model = tf.keras.models.load_model('saved_model/sbdb_my_model')
+    
     # st.write(df_predict.isna().sum())
     # st.write(bytes_data)
     # df_asteroid_updated_null_dataset = pickle.load(open(uploaded_file, 'rb'))
