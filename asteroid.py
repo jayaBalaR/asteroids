@@ -1,5 +1,5 @@
 import os
-import faiss
+# import faiss
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -13,29 +13,9 @@ from tqdm import tqdm
 import tensorflow as tf
 
 
-# def search(query):
-
-    # '''
-    # search the 5 nearest neighbors
-    # '''
-    # t=time.time()
-    #
-    # if len(query)> 0:
-    #    query_vector = model.encode([query])
-    #    k = 5
-    #    top_k = so_index.search(query_vector, k)
-    #    st.write("time elapse to retrieve results="+str(time.time()-t))
-    #    return [terms[_id] for _id in top_k[1].tolist()[0]]
 
 
-# def load_index():
 
-    # '''
-    # load the index using faiss library
-    # '''
-    # with open("faiss_index.pkl", "rb") as f:
-    #     so_index = faiss.deserialize_index(pickle.load(f))
-    # return so_index
 new_model = tf.keras.models.load_model("")
 
 
