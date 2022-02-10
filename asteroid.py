@@ -63,46 +63,11 @@ if __name__=="__main__":
     st.dataframe(df_predict)
 
     
-    # st.write(df_predict.isna().sum())
-    # st.write(bytes_data)
-    # df_asteroid_updated_null_dataset = pickle.load(open(uploaded_file, 'rb'))
-    #
-    #
-    #
-    # st.write(df_asteroid_updated_null_dataset.head())
-    # magnitude = st.number_input('Magnitude (between 3.4 to 29)')
-    # st.write('The magnitude is ', magnitude)
-    #
-    # albedo = st.number_input('Albedo (between 0.001 to 1)')
-    # st.write('The albedo is ', albedo)
-    #
-    #
-    # eccentricity = st.number_input('Eccentricity (ratio between 0 to 1)')
-    # st.write('The eccentricity ratio is ', eccentricity)
-    #
-    # semimajoraxis = st.number_input('SemiMajorAxis (ratio between 0 to 395 au)')
-    # st.write('The semimajoraxis is ', semimajoraxis)
-    #
-    #
-    # perihelion = st.number_input('Perihelion distance ( between 0 to 402 au)')
-    # st.write('The semimajoraxis is ', perihelion)
-    #
-    # inclination = st.number_input('Inclination angle ( between 0 to 180)')
-    # st.write('The inclination is ', inclination)
-    #
-    # om = st.number_input('Longitude of ascending node ( between 0 to 180)')
-    # st.write('The longitude of ascending node is ', om)
+    test_predictions = new_model.predict(df_predict).flatten()
 
+    df_predict['predicted_dia'] = test_predictions.tolist()
 
-    # terms = dataframe['concatenatetitletag'].to_list()
-
-    #https://unsplash.com/photos/FZRDvAsgEy8
-
-
-
-    # so_index = load_index()
-
-    # query = st.text_input('search text')
+    st.dataframe(df_predict)
 
 
     # results=search(query)
