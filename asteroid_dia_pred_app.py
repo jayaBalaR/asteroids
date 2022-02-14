@@ -63,7 +63,7 @@ if __name__=="__main__":
     st.write("The orbital period= ", per)
     
     
-    moid = st.slider('earth min orbit dist', 0, 39, 1.0)
+    moid = st.slider('earth min orbit dist', 0.0, 39.0, 1.0)
     st.write("earth min orbit dist= ", moid, 'au')
 
     scaler = StandardScaler()
