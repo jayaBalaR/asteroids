@@ -31,13 +31,13 @@ if __name__=="__main__":
     albedo = st.slider('albedo', 0.00, 98.00, 0.01)
     st.write("The geometric albedo(ratio) value= ", albedo)
     
-    e = st.slider('eccentricity', 0.0, 0.9, 0.1)
+    e = st.slider('eccentricity', 0.0, 0.99, 0.1)
     st.write("The eccentricity(ratio) value= ", e)
     
-    a = st.slider('semimajor axis', 0.6, 385, 0.1)
+    a = st.slider('semimajor axis', 0.6, 385.0, 0.1)
     st.write("The semimajor axis value= ", a, 'au')
     
-    q = st.slider('perihelion distance', 0.08, 40, 0.1)
+    q = st.slider('perihelion distance', 0.08, 40.0, 0.1)
     st.write("The perihelion distance value= ", q, 'au')
     
     i = st.slider('inclination', 0.0, 180.0, 10.0)
