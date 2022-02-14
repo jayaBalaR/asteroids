@@ -69,7 +69,10 @@ if __name__=="__main__":
 
     scaler = StandardScaler()
     inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
-    st.write(inp_array)
+    inp_features = scaler.fit_transform(inp_array)
+    
+    model_pred = my_model.predict(inp_features).flatten()
+    st.write('diameter=', model_pred)
 
     
 
