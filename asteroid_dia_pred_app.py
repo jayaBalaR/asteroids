@@ -25,7 +25,7 @@ if __name__=="__main__":
 
     start = time.time()
     
-    number = st.number_input('Insert a number')
+    number = st.number_input('Insert a number', min_value=0.0, max_value=10.1, step=0.1)
     st.write('The current number is ', number)
 
 #     magnitude = st.number_input('magnitude', 3.4, 29.0, 0.1)
