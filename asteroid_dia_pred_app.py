@@ -68,9 +68,9 @@ if __name__=="__main__":
 
     scaler = StandardScaler()
     
-    inp_array = np.array([magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid])
-    inp_array_reshape = inp_array.reshape(1,-1)
-    inp_features = scaler.fit_transform(inp_array_reshape)
+    inp_array = np.array([[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]])
+#     inp_array_reshape = inp_array.reshape(1,-1)
+    inp_features = scaler.fit_transform(inp_array)
     st.write(inp_features)
     
 
