@@ -25,8 +25,11 @@ if __name__=="__main__":
 
     start = time.time()
 
-    values = st.slider('Select a range of values',0.0, 100.0, (25.0, 75.0))
-    st.write('Values:', values)
+    magnitude = st.slider('Magnitude', 3.4, 29, 25)
+    st.write("The H value=", magnitude, 'au')
+    
+    albedo = st.slider('Albedo', 3.4, 29, 25)
+    st.write("The albedo value=", albedo, 'au')
 
 
     print(start)
