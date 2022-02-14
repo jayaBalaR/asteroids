@@ -26,10 +26,9 @@ if __name__=="__main__":
     start = time.time()
 
     magnitude = st.slider('Magnitude', 3.4, 29, 25)
-    st.write("The H value=", magnitude, 'au')
-    
-    albedo = st.slider('Albedo', 3.4, 29, 25)
-    st.write("The albedo value=", albedo, 'au')
+    st.write("The H value= ", magnitude, 'au')
+
+
 
 
     print(start)
