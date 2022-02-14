@@ -25,55 +25,50 @@ if __name__=="__main__":
 
     start = time.time()
 
-    magnitude = st.slider('magnitude', 3.4, 29.0, 0.1)
+    magnitude = st.number_input('magnitude', 3.4, 29.0, 0.1)
     st.write("The H value= ", magnitude, 'au')
     
-    albedo = st.slider('albedo', 0.00, 98.00, 0.01)
+    albedo = st.number_input('albedo', 0.00, 98.00, 0.01)
     st.write("The geometric albedo(ratio) value= ", albedo)
     
-    e = st.slider('eccentricity', 0.0, 0.99, 0.1)
+    e = st.number_input('eccentricity', 0.0, 0.99, 0.1)
     st.write("The eccentricity(ratio) value= ", e)
     
-    a = st.slider('semimajor axis', 0.6, 385.0, 0.1)
+    a = st.number_input('semimajor axis', 0.6, 385.0, 0.1)
     st.write("The semimajor axis value= ", a, 'au')
     
-    q = st.slider('perihelion distance', 0.08, 40.0, 0.1)
+    q = st.number_input('perihelion distance', 0.08, 40.0, 0.1)
     st.write("The perihelion distance value= ", q, 'au')
     
-    i = st.slider('inclination', 0.0, 180.0, 10.0)
+    i = st.number_input('inclination', 0.0, 180.0, 10.0)
     st.write("The inclination value= ", i)
     
-    om = st.slider('longitude of ascending node', 0.0, 360.0, 10.0)
+    om = st.number_input('longitude of ascending node', 0.0, 360.0, 10.0)
     st.write("The longitude of ascending node= ", om)
     
     #'w', 'ma','ad', 'n', 'per', 'moid'
-    w = st.slider('argument of perihelion', 0.0, 360.0, 10.0)
+    w = st.number_input('argument of perihelion', 0.0, 360.0, 10.0)
     st.write("The peri= ", w)
     
-    ma = st.slider('mean anomaly', 0.0, 367.0, 1.0)
+    ma = st.number_input('mean anomaly', 0.0, 367.0, 1.0)
     st.write("The mean anomaly= ", ma)
     
-    ad = st.slider('aphelion distance', 1.0, 764.0, 1.0)
+    ad = st.number_input('aphelion distance', 1.0, 764.0, 1.0)
     st.write("The aphelion distance= ", ad)
     
-    n = st.slider('mean motion', 0.0, 1.0, 1.0)
+    n = st.number_input('mean motion', 0.0, 1.0, 1.0)
     st.write("The mean motion= ", n)
         
-    per = st.slider('orbital period', 181.0, 2.760000e+06, 1.0)
+
+    per = st.number_input('orbital period', 181.0, 2.760000e+06, 1.0, 1.0 )
     st.write("The orbital period= ", per)
     
     
-    moid = st.slider('earth min orbit dist', 0.0, 39.0, 1.0)
+    moid = st.number_input('earth min orbit dist', 0.0, 39.0, 1.0)
     st.write("earth min orbit dist= ", moid, 'au')
 
     scaler = StandardScaler()
-    
-#     inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
-#     st.write(inp_array)
-#     st.write(type(inp_array))
-# #     inp_array_reshape = inp_array.reshape(1,-1)
-# #     inp_features = scaler.fit_transform(inp_array)
-# #     st.write(inp_features)
+
     
 
     print(start)
