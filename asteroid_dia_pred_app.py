@@ -25,7 +25,7 @@ if __name__=="__main__":
 
     start = time.time()
 
-    magnitude = st.slider('Magnitude', 3.4, 29, 25)
+    magnitude = st.slider('Magnitude', 3.4, 29.0, 0)
     st.write("The H value= ", magnitude, 'au')
 
 
