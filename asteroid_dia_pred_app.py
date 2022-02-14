@@ -31,7 +31,7 @@ if __name__=="__main__":
     albedo = st.slider('albedo', 0.00, 98.00, 0.01)
     st.write("The geometric albedo(ratio) value= ", albedo)
     
-    e = st.slider('eccentricity', 0, 0.9, 0.1)
+    e = st.slider('eccentricity', 0.0, 0.9, 0.1)
     st.write("The eccentricity(ratio) value= ", e)
     
     a = st.slider('semimajor axis', 0.6, 385, 0.1)
