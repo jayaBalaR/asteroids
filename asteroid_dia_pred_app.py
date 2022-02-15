@@ -78,15 +78,8 @@ if __name__=="__main__":
 
         
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
-            submitted1 = st.form_submit_button('Submit 1')
-            st.spinner(text="Computing predictions")
-            my_preds = my_model.predict(inp_array).flatten()
-            st.table(my_preds)
-#             st.write(inp_array)
-#             scaler.fit(inp_array)
-#             value = scaler.transform(inp_array)
-#             st.write(value)
-#         st.write(scaler)
-            
-#         inp_data = scaler.fit(inp_array)
-#         st.write(scaler.transform(inp_data))
+    submitted1 = st.form_submit_button('Submit 1')
+    st.spinner(text="Computing predictions")
+    my_preds = my_model.predict(inp_array).flatten()
+    st.table(my_preds)
+
