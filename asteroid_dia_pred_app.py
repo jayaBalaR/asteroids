@@ -84,4 +84,15 @@ if __name__=="__main__":
 #             df = pd.DataFrame(my_preds, columns= ('diameter'))
             st.markdown("Predicted **Diameter**")
             st.dataframe(my_preds)
+              
+            array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
+            df = pd.DataFrame(array)
+            dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
+            pha_pred = dt_gini(df)
+            if pha_pred[0] == 0:
+                st.markdown("**This is not a PHA**")
+            else:
+                st.markdown("**This is  a PHA**")
+                
+            y_pred_gini = dt_gini.predict(array)
 
