@@ -78,7 +78,9 @@ if __name__=="__main__":
         
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
             st.write(inp_array)
-            st.write(scaler.fit_transform(inp_array))
+            scaler.fit(inp_array)
+            value = scaler.transform(inp_array)
+            st.write(value)
 #         st.write(scaler)
             
 #         inp_data = scaler.fit(inp_array)
