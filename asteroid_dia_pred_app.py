@@ -83,5 +83,5 @@ if __name__=="__main__":
             my_preds = my_model.predict(inp_array).flatten()
             df = pd.DataFrame(my_preds, columns= ('diameter'))
 
-            st.table(df)
+            st.dataframe(df)
 
