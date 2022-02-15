@@ -81,5 +81,7 @@ if __name__=="__main__":
             submitted1 = st.form_submit_button('Submit 1')
             st.spinner(text="Computing predictions")
             my_preds = my_model.predict(inp_array).flatten()
-            st.table(my_preds)
+            df = pd.DataFrame(my_preds, columns= ('diameter'))
+
+            st.table(df)
 
