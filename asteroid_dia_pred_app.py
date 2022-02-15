@@ -81,4 +81,5 @@ if __name__=="__main__":
     
         st.spinner(text="Computing model predictions")
         model_pred = my_model.predict(inp_features).flatten()
-        st.table('diameter=', model_pred)
+        st.write("diameter")
+        st.table(model_pred)
