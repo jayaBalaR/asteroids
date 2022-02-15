@@ -28,7 +28,7 @@ if __name__=="__main__":
     
     with st.form('Form1'):
         
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
         
         with col1:
             magnitude = st.number_input('magnitude', min_value=3.4, max_value=29.0, step=0.0001)
@@ -75,11 +75,11 @@ if __name__=="__main__":
     
             moid = st.number_input('earth min orbit dist', min_value=0.0, max_value=39.0, step=1.0)
             st.write("earth min orbit dist= ", moid, 'au')
-
-        
+            
+        with col4:        
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
-    submitted1 = st.form_submit_button('Submit 1')
-    st.spinner(text="Computing predictions")
-    my_preds = my_model.predict(inp_array).flatten()
-    st.table(my_preds)
+            submitted1 = st.form_submit_button('Submit 1')
+            st.spinner(text="Computing predictions")
+            my_preds = my_model.predict(inp_array).flatten()
+            st.table(my_preds)
 
