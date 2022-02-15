@@ -76,13 +76,13 @@ if __name__=="__main__":
             st.write("earth min orbit dist= ", moid, 'au')
 
         
-        inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
-        st.write(inp_array)
-        inp_data = scaler.fit(inp_array)
-        inp_features = scaler.transform(inp_data)
-        st.write(inp_features)
+#         inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
+#         st.write(inp_array)
+#         inp_data = scaler.fit(inp_array)
+#         inp_features = scaler.transform(inp_data)
+#         st.write(inp_features)
         st.spinner(text="Computing model predictions")
-        model_pred = my_model.predict(inp_features).flatten()
+#         model_pred = my_model.predict(inp_features).flatten()
         
-        st.write("diameter")
-        st.table(model_pred)
+#         st.write("diameter")
+#         st.table(model_pred)
