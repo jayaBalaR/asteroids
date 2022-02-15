@@ -26,7 +26,8 @@ if __name__=="__main__":
 
     start = time.time()
     
-    with st.container():
+    with st.form('Form1'):
+        
         col1, col2, col3 = st.columns(3)
         
         with col1:
@@ -77,6 +78,7 @@ if __name__=="__main__":
 
         
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
+            submitted1 = st.form_submit_button('Submit 1')
             st.spinner(text="Computing predictions")
             my_preds = my_model.predict(inp_array).flatten()
             st.table(my_preds)
