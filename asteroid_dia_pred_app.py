@@ -77,7 +77,7 @@ if __name__=="__main__":
 
         
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
-            st.progress("Computing predictions")
+            st.spinner(text="Computing predictions")
             my_preds = my_model.predict(inp_array).flatten()
             st.table(my_preds)
 #             st.write(inp_array)
