@@ -88,11 +88,11 @@ if __name__=="__main__":
             array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
             df = pd.DataFrame(array)
             dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
-            pha_pred = dt_gini(df)
+            pha_pred = dt_gini.predict(df)
             if pha_pred[0] == 0:
                 st.markdown("**This is not a PHA**")
             else:
                 st.markdown("**This is  a PHA**")
                 
-            y_pred_gini = dt_gini.predict(array)
+            
 
