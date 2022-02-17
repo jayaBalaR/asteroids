@@ -24,6 +24,8 @@ else:
     st.error("sorry wrong credentials. retry with right credentials")
     authorize = 0
 
+username.enabled = False
+passwords.enabled = False
 new_model = tf.keras.models.load_model('sbdb_my_model')
 
 if authorize:
