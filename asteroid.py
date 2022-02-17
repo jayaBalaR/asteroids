@@ -14,61 +14,62 @@ import tensorflow as tf
 
 
 
+username = st.text_input('username')
+passwords = st.text_input('password')
 
+authorize = 0
+if username == st.secrets["db_username"] and passwords == st.secrets["db_password"]:
+    authorize = 1
+else:
+    authorize = 0
 
 new_model = tf.keras.models.load_model('sbdb_my_model')
 
-# Everything is accessible via the st.secrets dict:
+if authorize:
+    if __name__=="__main__":
+        st.title("**Asteroid Diameter Prediction**")
 
-st.write("DB username:", st.secrets["db_username"])
-st.write("DB password:", st.secrets["db_password"])
-st.write("My cool secrets:", st.secrets["my_cool_secrets"]["things_i_like"])
+        start = time.time()
 
-if __name__=="__main__":
-
-    st.title("**Asteroid Diameter Prediction**")
-
-    start = time.time()
-
-    uploaded_file = st.file_uploader("Choose a CSV file")
+        uploaded_file = st.file_uploader("Choose a CSV file")
     
-    if uploaded_file is not None:
-        df = pd.read_csv(uploaded_file.name)
+        if uploaded_file is not None:
+            df = pd.read_csv(uploaded_file.name)
 
-        st.write("original dataframe")
-        st.dataframe(df)
+            st.write("original dataframe")
+            st.dataframe(df)
 
-        df.drop(['pha','class','condition_code','spec_B', 'spec_T','per.y','rot_per', 'BV', 'UB','G','data_arc', 'diameter' ],axis=1,inplace=True)
+            df.drop(['pha','class','condition_code','spec_B', 'spec_T','per.y','rot_per', 'BV', 'UB','G','data_arc', 'diameter' ],axis=1,inplace=True)
 
-        st.write("Dropping few columns")
-
-
-        df_predict = df.copy(deep=True)
-
-        index_list = df_predict.index[df_predict['albedo'].isnull()].tolist()
-
-        np.random.seed(0)
-        mu = 0.14
-        sigma = float(0.01)
+            st.write("Dropping few columns")
 
 
-        for idx in tqdm(index_list):
-            df_predict.loc[idx,'albedo']= np.random.normal(mu, sigma ,size=1)
-        alblist = df_predict['albedo'].tolist() ###list of created albedo values
+            df_predict = df.copy(deep=True)
+
+            index_list = df_predict.index[df_predict['albedo'].isnull()].tolist()
+
+            np.random.seed(0)
+            mu = 0.14
+            sigma = float(0.01)
 
 
-        with st.spinner('Computing predictions'):
-            time.sleep(5)
-        st.success('Done!')
+            for idx in tqdm(index_list):
+                df_predict.loc[idx,'albedo']= np.random.normal(mu, sigma ,size=1)
+            alblist = df_predict['albedo'].tolist() ###list of created albedo values
+
+
+            with st.spinner('Computing predictions'):
+                time.sleep(5)
+            st.success('Done!')
         
 
     
-        test_predictions = new_model.predict(df_predict).flatten()
+            test_predictions = new_model.predict(df_predict).flatten()
 
-        df_predict['predicted_dia'] = test_predictions.tolist()
+            df_predict['predicted_dia'] = test_predictions.tolist()
 
-        st.dataframe(df_predict)
+            st.dataframe(df_predict)
 
 
 
-    print(start)
+        print(start)
