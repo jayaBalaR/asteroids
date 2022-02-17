@@ -14,13 +14,15 @@ import tensorflow as tf
 
 
 
-username = st.text_input('username')
-passwords = st.text_input('password', type="password", disabled=False)
+placeholder = st.empty()
+
+with placeholder.container():
+    username = st.text_input('username')
+    passwords = st.text_input('password', type="password", disabled=False)
 
 authorize = 0
 if passwords == st.secrets["db_password"]:
-    username.disabled = False
-    passwords.disabled = False
+    placeholder.empty()
     authorize = 1
 else:
     if username is not None and passwords is not None:
