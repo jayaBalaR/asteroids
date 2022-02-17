@@ -15,17 +15,18 @@ import tensorflow as tf
 
 
 username = st.text_input('username')
-passwords = st.text_input('password', type="password")
+passwords = st.text_input('password', type="password", disabled=False)
 
 authorize = 0
-if username == st.secrets["db_username"] and passwords == st.secrets["db_password"]:
+if passwords == st.secrets["db_password"]:
+    st.text_input('password', type="password", disabled=True)
     authorize = 1
 else:
-    st.error("sorry wrong credentials. retry with right credentials")
-    authorize = 0
+    if username is not None and passwords is not None:
+        st.error("sorry wrong credentials. retry with right credentials")
+        authorize = 0
 
-username.enabled = False
-passwords.enabled = False
+
 new_model = tf.keras.models.load_model('sbdb_my_model')
 
 if authorize:
