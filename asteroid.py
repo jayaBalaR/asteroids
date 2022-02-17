@@ -19,7 +19,8 @@ passwords = st.text_input('password', type="password", disabled=False)
 
 authorize = 0
 if passwords == st.secrets["db_password"]:
-    st.text_input('password', type="password", disabled=True)
+    username.enable = False
+    passwords.enable = False
     authorize = 1
 else:
     if username is not None and passwords is not None:
