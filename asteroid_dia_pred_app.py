@@ -75,7 +75,7 @@ if __name__=="__main__":
             st.write("The mean motion= ", n, 'deg/d')
         
 
-            per = st.number_input('orbital period', min_value=181.0, max_value=2.760000e+06, value=0.0)
+            per = st.number_input('orbital period', min_value=181.0, max_value=2.760000e+06)
             st.write("The orbital period= ", per, 'days')
     
     
