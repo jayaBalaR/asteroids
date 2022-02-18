@@ -33,7 +33,7 @@ if __name__=="__main__":
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            magnitude = st.number_input('magnitude', min_value=3.4, max_value=29.0)
+            magnitude = st.number_input('magnitude', min_value=0.00, max_value=29.0)
             st.write("The H value= ", magnitude, 'au')
     
             albedo = st.number_input('albedo', min_value=0.00, max_value=98.00)
@@ -96,7 +96,7 @@ if __name__=="__main__":
             pha_pred = dt_gini.predict(df)
             if pha_pred[0] == 0:
                 st.markdown("**This is not a PHA**")
-             else:
+            else:
                 st.markdown("**This is  a PHA**")
             end = time.time()
             time_elapsed = end-start
