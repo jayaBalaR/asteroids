@@ -89,9 +89,9 @@ if __name__=="__main__":
 
             val = [[3.4, 0.00, 0.0, 0.6, 0.08, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 181.0, 0.0]]
             my_preds = my_model.predict(inp_array).flatten()
-            st.write(my_preds != val)
             
-            if my_preds != val:
+            
+            if inp_array != val:
                 st.success("done computing predictions")
                 st.dataframe(my_preds)
                 array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
