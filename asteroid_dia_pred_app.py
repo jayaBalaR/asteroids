@@ -46,11 +46,11 @@ if __name__=="__main__":
             e = st.number_input('eccentricity', min_value=0.0, max_value=0.99)
             st.write("The eccentricity(ratio) value= ", e)
     
-            a = st.number_input('semimajor axis', min_value=0.6, max_value=385.0, value=0.0)
+            a = st.number_input('semimajor axis', min_value=0.6, max_value=385.0)
             st.write("The semimajor axis value= ", a, 'au')
         
         with col2:
-            q = st.number_input('perihelion distance', min_value=0.08, max_value=40.0, value=0.0)
+            q = st.number_input('perihelion distance', min_value=0.08, max_value=40.0)
             st.write("The perihelion distance value= ", q, 'au')
     
             i = st.number_input('inclination', min_value=0.0, max_value=180.0)
