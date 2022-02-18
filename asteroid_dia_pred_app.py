@@ -83,26 +83,25 @@ if __name__=="__main__":
             submitted1 = st.form_submit_button('Submit 1')
 
             my_preds = my_model.predict(inp_array).flatten()
+            time_elapsed = end-start
+            st.markdown("Success Predicted **Diameter**")
+            with placeholder.container():
+                st.dataframe(my_preds)
+        
+            with placeholder2.container():
+                if pha_pred[0] == 0:
+                    st.markdown("**This is not a PHA**")
+                else:
+                    st.markdown("**This is  a PHA**")
 
               
             array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
             df = pd.DataFrame(array)
             dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
             pha_pred = dt_gini.predict(df)
-            
+            st.write('total time elapsed since the start is', str(time_elapsed))
            
-    with st.form('Form2'):
-        end = time.time()
-        time_elapsed = end-start
-        st.markdown("Success Predicted **Diameter**")
-        with placeholder.container():
-            st.dataframe(my_preds)
-        
-        with placeholder2.container():
-                if pha_pred[0] == 0:
-                    st.markdown("**This is not a PHA**")
-                else:
-                    st.markdown("**This is  a PHA**")
+
        
-        st.write('total time elapsed since the start is', str(time_elapsed))
+        
         
