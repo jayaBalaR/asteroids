@@ -22,9 +22,11 @@ placeholder = st.empty()
 placeholder2 = st.empty()
 
 
+
 if __name__=="__main__":
 
     st.markdown("**Asteroid Diameter Prediction and PHA classification**")
+    my_preds = []
 
     start = time.time()
     
@@ -81,11 +83,13 @@ if __name__=="__main__":
         with col4:        
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
             submitted1 = st.form_submit_button('Submit 1')
-            my_preds = []
+
 
             my_preds = my_model.predict(inp_array).flatten()
-            st.success("done computing predictions")
-            st.dataframe(my_preds)
+            
+            if my_preds is not None:
+                st.success("done computing predictions")
+                st.dataframe(my_preds)
         
             
 
