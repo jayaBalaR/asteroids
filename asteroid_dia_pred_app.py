@@ -85,9 +85,7 @@ if __name__=="__main__":
             my_preds = my_model.predict(inp_array).flatten()
             with st.spinner('Computing predictions'):
                 time.sleep(2)
-            st.success('Done!')
-
-            st.markdown("Predicted **Diameter**")
+            st.markdown("Success Predicted **Diameter**")
             with placeholder.container():
                 st.dataframe(my_preds)
               
