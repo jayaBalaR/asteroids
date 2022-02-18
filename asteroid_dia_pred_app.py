@@ -100,6 +100,7 @@ if __name__=="__main__":
                     st.markdown("**This is not a PHA**")
                 else:
                     st.markdown("**This is  a PHA**")
+            end = time.time()
             time_elapsed = end-start
             st.write('total time elapsed since the start is', str(time_elapsed))
             
