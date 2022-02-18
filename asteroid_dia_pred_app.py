@@ -28,7 +28,7 @@ if __name__=="__main__":
     st.markdown("**Asteroid Diameter Prediction and PHA classification**")
     
     my_preds = []
-    st.write(len(my_preds))
+
 
     start = time.time()
     
@@ -89,24 +89,20 @@ if __name__=="__main__":
 
             my_preds = my_model.predict(inp_array).flatten()
             
-            if my_preds is not None:
+            if len(my_preds) !=0:
                 st.success("done computing predictions")
                 st.dataframe(my_preds)
-        
-            
-
-              
-            array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
-            df = pd.DataFrame(array)
-            dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
-            pha_pred = dt_gini.predict(df)
-            if pha_pred[0] == 0:
-                st.markdown("**This is not a PHA**")
-            else:
-                st.markdown("**This is  a PHA**")
-            end = time.time()
-            time_elapsed = end-start
-            st.write('total time elapsed since the start is', str(time_elapsed))
+                array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
+                df = pd.DataFrame(array)
+                dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
+                pha_pred = dt_gini.predict(df)
+                if pha_pred[0] == 0:
+                    st.markdown("**This is not a PHA**")
+                else:
+                    st.markdown("**This is  a PHA**")
+                end = time.time()
+                time_elapsed = end-start
+                st.write('total time elapsed since the start is', str(time_elapsed))
             
            
 
