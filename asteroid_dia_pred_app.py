@@ -81,12 +81,13 @@ if __name__=="__main__":
         with col4:        
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
             submitted1 = st.form_submit_button('Submit 1')
+            my_preds = []
+            if len(my_preds)==0:
+                st.spinner('Computing predictions...')
+                st.stop()
 
             my_preds = my_model.predict(inp_array).flatten()
-            
-            
-            with st.spinner('Computing predictions...'):
-                time.sleep(5)
+            st.success("done computing predictions")
             st.dataframe(my_preds)
         
             
