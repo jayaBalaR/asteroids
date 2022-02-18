@@ -37,7 +37,7 @@ if __name__=="__main__":
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            magnitude = st.number_input('magnitude', min_value=3.4, max_value=29.0, value=0.0)
+            magnitude = st.number_input('magnitude', min_value=3.4, max_value=29.0)
             st.write("The H value= ", magnitude, 'au')
     
             albedo = st.number_input('albedo', min_value=0.00, max_value=98.00)
@@ -84,13 +84,14 @@ if __name__=="__main__":
             
         with col4:        
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
+            val = [[3.4, 0.00, 0.0, 0.6, 0.08, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 181.0, 0.0]]
             submitted1 = st.form_submit_button('Submit 1')
 
 
             my_preds = my_model.predict(inp_array).flatten()
-            st.write(len(my_preds))
+            st.write(my_preds != val)
             
-            if len(my_preds) !=0:
+            if my_preds != val:
                 st.success("done computing predictions")
                 st.dataframe(my_preds)
                 array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
