@@ -93,6 +93,7 @@ if __name__=="__main__":
            
     with st.form('Form2'):
         end = time.time()
+        time_elapsed = end-start
         st.markdown("Success Predicted **Diameter**")
         with placeholder.container():
             st.dataframe(my_preds)
@@ -102,6 +103,6 @@ if __name__=="__main__":
                     st.markdown("**This is not a PHA**")
                 else:
                     st.markdown("**This is  a PHA**")
-       time_elapsed = end -start  
+       
        st.markdown(str(time_elapsed)  +"time taken to compute the result")
         
