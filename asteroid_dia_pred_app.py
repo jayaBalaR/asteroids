@@ -82,9 +82,6 @@ if __name__=="__main__":
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
             submitted1 = st.form_submit_button('Submit 1')
             my_preds = []
-            if len(my_preds)==0:
-                st.spinner('Computing predictions...')
-                st.stop()
 
             my_preds = my_model.predict(inp_array).flatten()
             st.success("done computing predictions")
