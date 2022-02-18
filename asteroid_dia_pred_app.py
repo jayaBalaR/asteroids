@@ -84,10 +84,10 @@ if __name__=="__main__":
             
         with col4:        
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
-            val = [[3.4, 0.00, 0.0, 0.6, 0.08, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 181.0, 0.0]]
+            
             submitted1 = st.form_submit_button('Submit 1')
 
-
+            val = [[3.4, 0.00, 0.0, 0.6, 0.08, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 181.0, 0.0]]
             my_preds = my_model.predict(inp_array).flatten()
             st.write(my_preds != val)
             
