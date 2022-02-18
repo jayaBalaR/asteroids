@@ -54,29 +54,29 @@ if __name__=="__main__":
             st.write("The perihelion distance value= ", q, 'au')
     
             i = st.number_input('inclination', min_value=0.0, max_value=180.0)
-            st.write("The inclination value= ", i)
+            st.write("The inclination value= ", i, 'degrees')
     
             om = st.number_input('longitude of ascending node', min_value=0.0, max_value=360.0)
-            st.write("The longitude of ascending node= ", om)
+            st.write("The longitude of ascending node= ", om, 'degrees')
     
             #'w', 'ma','ad', 'n', 'per', 'moid'
             w = st.number_input('argument of perihelion', min_value=0.0, max_value=360.0)
-            st.write("The peri= ", w)
+            st.write("The peri= ", w, 'degrees')
     
             ma = st.number_input('mean anomaly', min_value=0.0, max_value=367.0)
-            st.write("The mean anomaly= ", ma)
+            st.write("The mean anomaly= ", ma, 'degrees')
        
         with col3:
         
             ad = st.number_input('aphelion distance', min_value=1.0, max_value=764.0)
-            st.write("The aphelion distance= ", ad)
+            st.write("The aphelion distance= ", ad, 'au')
     
             n = st.number_input('mean motion', min_value=0.0, max_value=1.0)
-            st.write("The mean motion= ", n)
+            st.write("The mean motion= ", n, 'deg/d')
         
 
             per = st.number_input('orbital period', min_value=181.0, max_value=2.760000e+06)
-            st.write("The orbital period= ", per)
+            st.write("The orbital period= ", per, 'days')
     
     
             moid = st.number_input('earth min orbit dist', min_value=0.0, max_value=39.0)
@@ -88,6 +88,7 @@ if __name__=="__main__":
 
 
             my_preds = my_model.predict(inp_array).flatten()
+            st.write(len(my_preds))
             
             if len(my_preds) !=0:
                 st.success("done computing predictions")
@@ -102,10 +103,4 @@ if __name__=="__main__":
                     st.markdown("**This is  a PHA**")
                 end = time.time()
                 time_elapsed = end-start
-                st.write('total time elapsed since the start is', str(time_elapsed))
-            
-           
-
-       
-        
-        
+                st.write('total time elapsed since the start is', str(time_elapsed))   
