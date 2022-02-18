@@ -26,7 +26,9 @@ placeholder2 = st.empty()
 if __name__=="__main__":
 
     st.markdown("**Asteroid Diameter Prediction and PHA classification**")
+    
     my_preds = []
+    st.write(len(my_preds))
 
     start = time.time()
     
