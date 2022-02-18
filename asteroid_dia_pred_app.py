@@ -94,11 +94,10 @@ if __name__=="__main__":
             df = pd.DataFrame(array)
             dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
             pha_pred = dt_gini.predict(df)
-            with placeholder2.container():
-                if pha_pred[0] == 0:
-                    st.markdown("**This is not a PHA**")
-                else:
-                    st.markdown("**This is  a PHA**")
+            if pha_pred[0] == 0:
+                st.markdown("**This is not a PHA**")
+             else:
+                st.markdown("**This is  a PHA**")
             end = time.time()
             time_elapsed = end-start
             st.write('total time elapsed since the start is', str(time_elapsed))
