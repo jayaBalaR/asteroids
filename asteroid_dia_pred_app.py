@@ -104,5 +104,5 @@ if __name__=="__main__":
                 else:
                     st.markdown("**This is  a PHA**")
        
-       st.markdown(str(time_elapsed)  +"time taken to compute the result")
+       st.markdown(str(time_elapsed)+"time taken to compute the result")
         
