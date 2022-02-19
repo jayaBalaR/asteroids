@@ -32,11 +32,11 @@ if __name__=="__main__":
 
     start = time.time()
     
-    def form_callback():
-        st.write(st.session_state.H)
-        st.write(st.session_state.albedo)
-        st.write(st.session_state.e)
-        st.write(st.session_state.a)
+#     def form_callback():
+#         st.write(st.session_state.H)
+#         st.write(st.session_state.albedo)
+#         st.write(st.session_state.e)
+#         st.write(st.session_state.a)
     
     with st.form('Form1'):
         
@@ -97,7 +97,7 @@ if __name__=="__main__":
         with col4:        
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
             
-            submitted1 = st.form_submit_button('Submit 1', on_click=form_callback)
+            submitted1 = st.form_submit_button('Submit 1')
 
             val = [[3.4, 0.00, 0.0, 0.6, 0.08, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 181.0, 0.0]]
             my_preds = my_model.predict(inp_array).flatten()
