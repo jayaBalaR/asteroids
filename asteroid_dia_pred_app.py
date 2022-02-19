@@ -32,22 +32,34 @@ if __name__=="__main__":
 
     start = time.time()
     
+    def form_callback():
+        st.write(st.session_state.H)
+        st.write(st.session_state.albedo)
+        st.write(st.session_state.e)
+        st.write(st.session_state.a)
+    
     with st.form('Form1'):
         
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            magnitude = st.number_input('magnitude', min_value=3.4, max_value=29.0)
+            magnitude = st.number_input('magnitude', min_value=3.4, max_value=29.0, key="H")
             st.write("The H value= ", magnitude, 'au')
     
-            albedo = st.number_input('albedo', min_value=0.00, max_value=98.00)
+            albedo = st.number_input('albedo', min_value=0.00, max_value=98.00, key="albedo")
             st.write("The geometric albedo(ratio) value= ", albedo)
     
-            e = st.number_input('eccentricity', min_value=0.0, max_value=0.99)
+            e = st.number_input('eccentricity', min_value=0.0, max_value=0.99, key="e")
             st.write("The eccentricity(ratio) value= ", e)
     
-            a = st.number_input('semimajor axis', min_value=0.6, max_value=385.0)
+            a = st.number_input('semimajor axis', min_value=0.6, max_value=385.0, key="a")
             st.write("The semimajor axis value= ", a, 'au')
+            
+            st.session_state.albedo
+            st.session_state.H
+            st.session_state.e
+            st.session_state.a
+            
         
         with col2:
             q = st.number_input('perihelion distance', min_value=0.08, max_value=40.0)
@@ -85,7 +97,7 @@ if __name__=="__main__":
         with col4:        
             inp_array = [[magnitude,albedo,e,a,q,i,om,w,ma,ad,n,per,moid]]
             
-            submitted1 = st.form_submit_button('Submit 1')
+            submitted1 = st.form_submit_button('Submit 1', on_click=form_callback)
 
             val = [[3.4, 0.00, 0.0, 0.6, 0.08, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 181.0, 0.0]]
             my_preds = my_model.predict(inp_array).flatten()
