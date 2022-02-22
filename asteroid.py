@@ -25,8 +25,8 @@ if passwords == st.secrets["db_password"]:
     placeholder.empty()
     authorize = 1
 else:
-    if username is not None and passwords is not None:
-        st.error("sorry wrong credentials. retry with right credentials")
+    if username is not "" and passwords != st.secrets["db_password"] :
+        st.warning("sorry wrong credentials. retry with right credentials")
         authorize = 0
 
 
