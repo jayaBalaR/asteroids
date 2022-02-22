@@ -73,7 +73,7 @@ if authorize:
     
             test_predictions = new_model.predict(df_predict).flatten()
         
-            st.write("the predictions computed in " %%time)
+            st.write("the predictions computed in "+ %%time)
 
             df_predict['predicted_dia'] = test_predictions.tolist()
 
