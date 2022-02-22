@@ -68,10 +68,12 @@ if authorize:
             with st.spinner('Computing predictions'):
                 time.sleep(5)
             st.success('Done!')
-        
+           
 
     
             test_predictions = new_model.predict(df_predict).flatten()
+        
+            st.write("the predictions computed in " %%time)
 
             df_predict['predicted_dia'] = test_predictions.tolist()
 
