@@ -87,7 +87,9 @@ if authorize:
             pha_pred = dt_gini.predict(df_predict).flatten()
             
             df_predict['PHA'] = pha_pred.tolist()
+            st.dataframe(df_predict)
+            end = time.time()
+            elapsed = end -start
 
 
-
-        print(start)
+        st.write("Time elapsed for computing predictions for this offline model is=", elapsed )
