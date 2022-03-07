@@ -108,15 +108,18 @@ if __name__=="__main__":
                 st.dataframe(my_preds)
                 #array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
                 array = [[st.session_state.H], [st.session_state.albedo], [st.session_state.e], [st.session_state.a], [st.session_state.q], [st.session_state.i], [st.session_state.om], [st.session_state.w], [st.session_state.ma], [st.session_state.ad], [st.session_state.n], [st.session_state.per], [st.session_state.moid]]
+                st.write(array)
                 scaler = StandardScaler()
                 scaler.fit(array)
 
-#                 st.write(scaler.mean_)
+
 
                 values = scaler.transform(array)
+                st.write(values)
                 df = pd.DataFrame(values)
                 dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
                 pha_pred = dt_gini.predict(df)
+                st.write(pha_pred[0])
                 if pha_pred[0] == 0:
                     st.markdown("**This is not a PHA**")
                 else:
