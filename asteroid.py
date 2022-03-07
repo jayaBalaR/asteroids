@@ -26,7 +26,7 @@ if passwords == st.secrets["db_password"]:
     authorize = 1
 else:
     if username == "" and passwords != st.secrets["db_password"] :
-        st.warning("sorry wrong credentials. retry with right credentials")
+        st.info("Please enter the username and password provided to you by your administrator")
         authorize = 0
 
 
