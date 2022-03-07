@@ -92,4 +92,4 @@ if authorize:
             elapsed = end -start
 
 
-        st.write("Time elapsed for computing predictions for this offline model is=", elapsed )
+            st.write("Time elapsed for computing predictions for this offline model is=", elapsed )
