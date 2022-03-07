@@ -113,12 +113,12 @@ if __name__=="__main__":
 
                 
                 df = pd.DataFrame(array)
-                st.write(type(df))
+
                 dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
-                st.write("after loading gini_model")
+
                 pha_pred = dt_gini.predict(df)
-                st.write("for computing pha")
-                st.write(pha_pred[0])
+
+
                 if pha_pred[0] == 0:
                     st.markdown("**This is not a PHA**")
                 else:
