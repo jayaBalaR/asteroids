@@ -106,8 +106,8 @@ if __name__=="__main__":
             if inp_array != val:
                 st.success("done computing predictions")
                 st.dataframe(my_preds)
-                #array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
-                array = [[st.session_state.H, st.session_state.albedo, st.session_state.e, st.session_state.a, st.session_state.q, st.session_state.i, st.session_state.om, st.session_state.w, st.session_state.ma, st.session_state.ad, st.session_state.n, st.session_state.per, st.session_state.moid]]
+                array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
+                #array = [[st.session_state.H, st.session_state.albedo, st.session_state.e, st.session_state.a, st.session_state.q, st.session_state.i, st.session_state.om, st.session_state.w, st.session_state.ma, st.session_state.ad, st.session_state.n, st.session_state.per, st.session_state.moid]]
                 st.write(array)
 
 
