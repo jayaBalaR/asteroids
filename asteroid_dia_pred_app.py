@@ -107,16 +107,12 @@ if __name__=="__main__":
                 st.success("done computing predictions")
                 st.dataframe(my_preds)
                 #array = [[magnitude, e, a, q, i, om, w, ma, ad, n, per, moid, albedo, my_preds]]
-                array = [[st.session_state.H], [st.session_state.albedo], [st.session_state.e], [st.session_state.a], [st.session_state.q], [st.session_state.i], [st.session_state.om], [st.session_state.w], [st.session_state.ma], [st.session_state.ad], [st.session_state.n], [st.session_state.per], [st.session_state.moid]]
+                array = [[st.session_state.H, st.session_state.albedo, st.session_state.e, st.session_state.a, st.session_state.q, st.session_state.i, st.session_state.om, st.session_state.w, st.session_state.ma, st.session_state.ad, st.session_state.n, st.session_state.per, st.session_state.moid]]
                 st.write(array)
-                scaler = StandardScaler()
-                scaler.fit(array)
 
 
-
-                values = scaler.transform(array)
                 
-                df = pd.DataFrame(values)
+                df = pd.DataFrame(array)
                 st.write(type(df))
                 dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
                 st.write("after loading gini_model")
