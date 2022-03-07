@@ -78,6 +78,15 @@ if authorize:
             df_predict['predicted_dia'] = test_predictions.tolist()
 
             st.dataframe(df_predict)
+            
+            dt_gini = pickle.load(open('gini_sbdbmodel.pkl', 'rb'))
+            with st.spinner('Computing predictions for pha'):
+                time.sleep(5)
+            st.success('Done!')
+
+            pha_pred = dt_gini.predict(df_predict).flatten()
+            
+            df_predict['PHA'] = pha_pred.tolist()
 
 
 
