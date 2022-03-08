@@ -46,23 +46,23 @@ if authorize:
             st.write("original dataframe")
             st.dataframe(df)
 
-            df.drop(['pha','class','condition_code','spec_B', 'spec_T','per.y','rot_per', 'BV', 'UB','G','data_arc', 'diameter' ],axis=1,inplace=True)
+            #df.drop(['pha','class','condition_code','spec_B', 'spec_T','per.y','rot_per', 'BV', 'UB','G','data_arc', 'diameter' ],axis=1,inplace=True)
 
-            st.write("Dropping few columns")
+#             st.write("Dropping few columns")
 
 
             df_predict = df.copy(deep=True)
 
-            index_list = df_predict.index[df_predict['albedo'].isnull()].tolist()
+            #index_list = df_predict.index[df_predict['albedo'].isnull()].tolist()
 
-            np.random.seed(0)
-            mu = 0.14
-            sigma = float(0.01)
+#             np.random.seed(0)
+#             mu = 0.14
+#             sigma = float(0.01)
 
 
-            for idx in tqdm(index_list):
-                df_predict.loc[idx,'albedo']= np.random.normal(mu, sigma ,size=1)
-            alblist = df_predict['albedo'].tolist() ###list of created albedo values
+#             for idx in tqdm(index_list):
+#                 df_predict.loc[idx,'albedo']= np.random.normal(mu, sigma ,size=1)
+#             alblist = df_predict['albedo'].tolist() ###list of created albedo values
 
 
             with st.spinner('Computing predictions'):
