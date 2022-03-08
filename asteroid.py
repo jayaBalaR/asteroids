@@ -30,7 +30,7 @@ else:
         authorize = 0
 
 
-new_model = tf.keras.models.load_model('sbdb_my_model')
+new_model = tf.keras.models.load_model('my_model')
 
 if authorize:
     if __name__=="__main__":
