@@ -9,7 +9,7 @@ import time
 import csv
 import pickle
 from io import StringIO
-from tqdm import tqdm
+# from tqdm import tqdm
 import tensorflow as tf
 import sklearn
 
