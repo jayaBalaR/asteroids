@@ -3,4 +3,3 @@ numpy
 pandas
 keras.preprocessing
 scikit-learn
-tqdm
