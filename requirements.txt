@@ -2,4 +2,4 @@ tensorflow
 numpy
 pandas
 keras.preprocessing
-scikit-learn==1.2.2
+scikit-learn==1.3.0
