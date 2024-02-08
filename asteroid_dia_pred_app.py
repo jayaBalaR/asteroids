@@ -115,7 +115,7 @@ if __name__=="__main__":
                 
                 df = pd.DataFrame(array)
 
-                dt_gini = pickle.load(open('gini_sbdbmodel.pkl','latin1','rb'))
+                dt_gini = pickle.load(open('gini_sbdbmodel.pkl','rb'), encoding='latin1')
 
                 pha_pred = dt_gini.predict(df)
 
