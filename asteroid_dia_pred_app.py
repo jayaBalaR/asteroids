@@ -17,7 +17,8 @@ from sklearn.preprocessing import StandardScaler
 
 
 
-my_model = tf.keras.models.load_model('my_model')
+# my_model = tf.keras.models.load_model('my_model')
+my_model = keras.saving.load_model("my_model")
 scaler = StandardScaler()
 placeholder = st.empty()
 placeholder2 = st.empty()
