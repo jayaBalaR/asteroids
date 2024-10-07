@@ -12,6 +12,7 @@ from io import StringIO
 # from tqdm import tqdm
 import tensorflow as tf
 import sklearn
+import keras
 
 from sklearn.preprocessing import StandardScaler
 
